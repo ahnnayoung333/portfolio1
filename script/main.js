@@ -195,58 +195,46 @@ close.addEventListener("click", () => {
 
 //--------------------------------------------------맴버소개
 
-const list = document.querySelector("#list");
 
-list.addEventListener("click",(e)=>{
-    e.preventDefault();
-    
-    if(e.target == list) return;
-    //list자체에 있는 이벤트를 제어하는것
-    //범위를 list가 아니라 좁혀서 a태그자체만으로 한정지어주어야함
-    let target = e.target.closest(".item").querySelector(".thumn");
-    //target === img로 한정지어주고 
-    //클릭이벤트가 발생한 지점이 target이라면
-    //원래의 코드가 발생하도록 if문으로 구역을 지정합니다.
-    if(e.target == target){
-        // let imgSrc = target.querySelector("a").getAttribute("href");
-        //target이 img로 바뀜에 따라 a태그를 찾는 방법을 
-        //parentElementfh a태그를 찾도록 합니다
-        let imgSrc = target.parentElement.getAttribute("href");
-        let pop = document.createElement("aside");
-        let pops = `<img src="${imgSrc}">
-                    <span class="close">CLOSE</span>`;
-    pop.innerHTML = pops;
-    main.append(pop);
-    }else{
-        return;
-    }
-    
 
-})
+
 // 첫 단계 : 변수 할당하기, 동작을 적용할 요소를 담기
-// const articles = document.querySelectorAll("article");
-// const aside = document.querySelector("aside");
-// const close1 = aside.querySelector("span");
+const articles = document.querySelectorAll("article");
+const aside = document.querySelector(".aside");
+const close1 = aside.querySelector("span");
 
-// for (const el of articles) {
+for (const el of articles) {
+
+ 
     
 
-//     el.addEventListener("click",(e)=>{
+    el.addEventListener("click",(e)=>{
 
-//         // 클릭한 article(=== e.currentTarget)의 내용(h2, p, video주소)을 변수에 담기
-//         // let tit = e.currentTarget.querySelector("h2").innerText;
-//         let txt = e.currentTarget.querySelector("p").innerText;
-//         let imgSrc = e.currentTarget.querySelector("img").getAttribute("src");
-
-//         // aside.querySelector("h2").innerText = tit;
-//         aside.querySelector("p").innerText = txt;
-//         let img = e.currentTarget.querySelector("img"); 
-//         img.setAttribute("src", imgSrc);
-//         // setAttribute(얘를, 이것으로) 속성 값을 교체하는 메소드
+        // 클릭한 article(=== e.currentTarget)의 내용(h2, p, video주소)을 변수에 담기
+        // let tit = e.currentTarget.querySelector("h2").innerText;
+        let txt = e.currentTarget.querySelector("p").innerText;
+        let img = e.currentTarget.querySelector("figure").querySelector("img").getAttribute("src");
+        console.log(img);
+        // aside.querySelector("h1").innerText = tit;
+        aside.querySelector("p").innerText = txt;
+        aside.querySelector("figure").querySelector("img").setAttribute("src",img);
+        // setAttribute(얘를, 이것으로) 속성 값을 교체하는 메소드
         
-//     })
+
+        aside.classList.add("on");
+        // aside에다가 on붙이기
+        // classList - 클래스를 핸들링 할 수 있는 목록을 담아놓은 객체 
+        // (클래스에 손댈 거 있으면 일단 클래스리스트를 쓰면 됨,,, 도라에몽 주머니 느낌)
+        // -classList 라는 객체는 class에 관련된 모든 메소드들이 담긴 객체 임
+        
+    })
     
-// }
+}
+close1.addEventListener("click",()=>{
+    aside.classList.remove("on");
+    aside.querySelector("video").pause();
+    // 옆으로 사라진 상태에서도 재생되는 걸 해결하기 위한 코드
+})
 
 
 

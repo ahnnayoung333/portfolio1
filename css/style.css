@@ -747,46 +747,27 @@ figure .pop.on .close {
   margin: 20px;
   position: relative;
   z-index: 1;
+  filter: grayscale(1);
   transition: all 1s;
 }
 .member section article:hover {
   flex: 1.5;
   opacity: 1;
   z-index: 2;
-}
-.member section article:hover::before {
-  opacity: 1;
-  left: 0;
-}
-.member section article:hover .inner .txt h2::after {
-  width: 120px;
-  background-color: orange;
-}
-.member section article .inner {
-  border: 1px solid #000;
-  filter: grayscale(1);
-  transition: 0.5s;
-}
-.member section article .inner:hover {
   filter: grayscale(0);
+}
+.member section article:hover .inner .txt h2 {
+  font-size: 40px;
+  text-shadow: 3px 3px 3px #000;
+  color: #79e5cb;
 }
 .member section article .inner .txt h2 {
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
-}
-.member section article .inner .txt h2::before {
-  content: "";
-  display: flex;
-  position: relative;
-  left: 20px;
-  transform: translateX(-50%);
-  width: 20px;
-  height: 2px;
-  background-color: #777;
-  margin-top: 50px;
   transition: 1s;
+  font-size: 20px;
 }
 .member section article .inner .txt p {
   opacity: 0;
@@ -806,7 +787,7 @@ figure .pop.on .close {
   object-fit: contain;
 }
 
-aside {
+.aside {
   width: 100%;
   height: 100vh;
   position: absolute;
@@ -820,35 +801,40 @@ aside {
   transition: 1s;
   background-color: #222;
 }
-aside.on {
+.aside.on {
   opacity: 1;
   left: 0;
 }
-aside .txt {
+.aside .txt {
   width: 25%;
   height: 100%;
 }
-aside .txt h2 {
+.aside .txt h1 {
+  position: relative;
+  top: 0;
+  color: #fff;
+}
+.aside .txt h2 {
   opacity: 1;
   font: normal 6vw/1 "Alegreya Sans SC";
   color: #ddd;
   margin-bottom: 20px;
 }
-aside .txt p {
+.aside .txt p {
   opacity: 1;
   font: 1.1vw/1.2 "arial";
-  color: #666;
+  color: #888;
   margin-bottom: 60px;
 }
-aside .txt span {
+.aside .txt span {
   cursor: pointer;
   color: orange;
 }
-aside figure {
+.aside figure {
   width: 72%;
   height: 100%;
 }
-aside figure img {
+.aside figure img {
   width: 100%;
   height: 100%;
   object-fit: cover;
