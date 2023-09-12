@@ -178,8 +178,6 @@ opens.forEach((el) => {
         btns1.classList.add("off");
 
 
-
-
     })
 })
 
@@ -196,118 +194,67 @@ close.addEventListener("click", () => {
 })
 
 //--------------------------------------------------맴버소개
+
+const list = document.querySelector("#list");
+
+list.addEventListener("click",(e)=>{
+    e.preventDefault();
+    
+    if(e.target == list) return;
+    //list자체에 있는 이벤트를 제어하는것
+    //범위를 list가 아니라 좁혀서 a태그자체만으로 한정지어주어야함
+    let target = e.target.closest(".item").querySelector(".thumn");
+    //target === img로 한정지어주고 
+    //클릭이벤트가 발생한 지점이 target이라면
+    //원래의 코드가 발생하도록 if문으로 구역을 지정합니다.
+    if(e.target == target){
+        // let imgSrc = target.querySelector("a").getAttribute("href");
+        //target이 img로 바뀜에 따라 a태그를 찾는 방법을 
+        //parentElementfh a태그를 찾도록 합니다
+        let imgSrc = target.parentElement.getAttribute("href");
+        let pop = document.createElement("aside");
+        let pops = `<img src="${imgSrc}">
+                    <span class="close">CLOSE</span>`;
+    pop.innerHTML = pops;
+    main.append(pop);
+    }else{
+        return;
+    }
+    
+
+})
 // 첫 단계 : 변수 할당하기, 동작을 적용할 요소를 담기
-const articles = document.querySelectorAll("article");
-const aside = document.querySelector("aside");
-const close1 = aside.querySelector("span");
+// const articles = document.querySelectorAll("article");
+// const aside = document.querySelector("aside");
+// const close1 = aside.querySelector("span");
 
-for (const el of articles) {
+// for (const el of articles) {
     
 
-    el.addEventListener("click",(e)=>{
+//     el.addEventListener("click",(e)=>{
 
-        // 클릭한 article(=== e.currentTarget)의 내용(h2, p, video주소)을 변수에 담기
-        // let tit = e.currentTarget.querySelector("h2").innerText;
-        let txt = e.currentTarget.querySelector("p").innerText;
-        let imgSrc = e.currentTarget.querySelector("img").getAttribute("src");
+//         // 클릭한 article(=== e.currentTarget)의 내용(h2, p, video주소)을 변수에 담기
+//         // let tit = e.currentTarget.querySelector("h2").innerText;
+//         let txt = e.currentTarget.querySelector("p").innerText;
+//         let imgSrc = e.currentTarget.querySelector("img").getAttribute("src");
 
-        // aside.querySelector("h2").innerText = tit;
-        aside.querySelector("p").innerText = txt;
-        let img = e.currentTarget.querySelector("img"); 
-        img.setAttribute("src", imgSrc);
-        // setAttribute(얘를, 이것으로) 속성 값을 교체하는 메소드
+//         // aside.querySelector("h2").innerText = tit;
+//         aside.querySelector("p").innerText = txt;
+//         let img = e.currentTarget.querySelector("img"); 
+//         img.setAttribute("src", imgSrc);
+//         // setAttribute(얘를, 이것으로) 속성 값을 교체하는 메소드
         
-
-        
-    })
+//     })
     
-}
+// }
+
+
+
+
 
 
 
 //-------------------------역사
 
 
-// let sections = document.querySelectorAll(".row section");
-// let section_arr = Array.from(sections);
-
-// //얘네는 그 스크롤할때 있는 옆에잇는 바 아닌가?.........
-// let liss = document.querySelectorAll("ul li");
-// let lis_arr = Array.from(liss);
-
-
-// let base = 2700;
-// let posArr = [];
-
-// setPos();
-// function setPos(){
-//     for(let el of section_arr){
-//         posArr.push(el.offsetTop);
-//     }
-// }
-
-
-// console.log(posArr);
-
-// window.addEventListener("scroll", ()=>{
-//     let scroll = window.scrollY || window.pageXOffset || document.documentElement.scrollTop;
-
-//     console.log(scroll);
-
-    
-
-//     section_arr.map((el, index) => {
-//         if(scroll >= posArr[index] + base ){
-//             for(let el of lis_arr){
-//                 el.classList.remove("on")
-//             }
-//             lis_arr[index].classList.add("on");
-//             for(let el of section_arr){
-//                 el.classList.remove("on")
-//             }
-//             section_arr[index].classList.add("on");
-//         }
-//     })
-  
-// })
-
-// lis_arr.map((el, index)=>{
-//     el.addEventListener("click", ()=>{
-//         window.scrollTo({top: posArr[index], behavior: "smooth"})
-//     })
-// })
-
-let sections = document.querySelectorAll("community section");
-//community 안에 있는 섹션들 모두...라는 뜻
-let section_arr = Array.from(sections);
-
-//li가 작동하면 애들이 작동하는 느낌인데,,, li없이 어떻게 하나요...]
-
-// let base = -300;
-let posArr = [];
-
-setPos();
-function setPos(){
-    for(let el of section_arr){
-        posArr.push(el.offsetTop);
-    }
-}
-window.addEventListener("scroll", ()=>{
-    let scroll = window.scrollY || window.pageXOffset || document.documentElement.scrollTop;
-
-    // console.log(scroll); //시끄러워서 잠깐 끔 작동은 됨ㄴ
-
-    
-
-    section_arr.map((el, index) => {
-        
-            // lis_arr[index].classList.add("on");
-            for(let el of section_arr){
-                el.classList.remove("on")
-            }
-            section_arr[index].classList.add("on");
-        
-    })
-  
-})
 

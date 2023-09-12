@@ -749,15 +749,32 @@ figure .pop.on .close {
   z-index: 1;
   transition: all 1s;
 }
+.member section article:hover {
+  flex: 1.5;
+  opacity: 1;
+  z-index: 2;
+}
+.member section article:hover::before {
+  opacity: 1;
+  left: 0;
+}
+.member section article:hover .inner .txt h2::after {
+  width: 120px;
+  background-color: orange;
+}
+.member section article .inner {
+  border: 1px solid #000;
+  filter: grayscale(1);
+  transition: 0.5s;
+}
+.member section article .inner:hover {
+  filter: grayscale(0);
+}
 .member section article .inner .txt h2 {
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
-}
-.member section article .inner .txt h2::after {
-  width: 120px;
-  background-color: orange;
 }
 .member section article .inner .txt h2::before {
   content: "";
@@ -794,6 +811,8 @@ aside {
   height: 100vh;
   position: absolute;
   top: 0;
+  left: -100%;
+  opacity: 0;
   padding: 20vh 7vw 14vh 20vw;
   z-index: 2;
   display: flex;
