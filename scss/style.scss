@@ -8,7 +8,27 @@
 @import "./common/content";
 @import "./common/footer";
 
-@import "./common/location";
+@import "./Sub/location";
+
+@import "./Sub/soloOnew";
+@import "./Sub/soloJong";
+@import "./Sub/soloTaem";
+@import "./Sub/soloMin";
+@import "./Sub/solokey";
+
+@import "./Sub/japan";
+
+@import "./Sub/otherOnew";
+@import "./Sub/otherJong";
+@import "./Sub/otherTaem";
+@import "./Sub/otherMin";
+@import "./Sub/otherKey";
+
+@import  "./Sub/awardTeam";
+@import "./Sub/awardInividual";
+
+
+
 
 @import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Fredericka+the+Great&family=Satisfy&display=swap');
