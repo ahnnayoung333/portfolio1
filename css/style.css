@@ -771,6 +771,7 @@ figure .pop.on .close {
 }
 .member section article .inner .txt p {
   opacity: 0;
+  display: none;
 }
 .member section article .inner figure {
   width: 100%;
@@ -789,12 +790,12 @@ figure .pop.on .close {
 
 .aside {
   width: 100%;
-  height: 100vh;
+  height: 70vh;
   position: absolute;
-  top: 0;
+  top: 30px;
   left: -100%;
   opacity: 0;
-  padding: 20vh 7vw 14vh 20vw;
+  padding: 0% 0% 0% 0%;
   z-index: 2;
   display: flex;
   justify-content: space-between;
@@ -808,30 +809,35 @@ figure .pop.on .close {
 .aside .txt {
   width: 25%;
   height: 100%;
-}
-.aside .txt h1 {
   position: relative;
-  top: 0;
-  color: #fff;
+  top: 5%;
 }
 .aside .txt h2 {
+  position: relative;
+  top: 0;
+  left: 10%;
   opacity: 1;
   font: normal 6vw/1 "Alegreya Sans SC";
   color: #ddd;
   margin-bottom: 20px;
 }
 .aside .txt p {
+  position: relative;
+  top: 0;
+  left: 10%;
   opacity: 1;
   font: 1.1vw/1.2 "arial";
   color: #888;
-  margin-bottom: 60px;
 }
 .aside .txt span {
+  position: absolute;
+  bottom: 10%;
+  left: 10%;
   cursor: pointer;
   color: orange;
 }
 .aside figure {
-  width: 72%;
+  width: 40%;
   height: 100%;
 }
 .aside figure img {
@@ -844,8 +850,8 @@ figure .pop.on .close {
   width: 100%;
   height: 215vh;
   position: relative;
+  top: 30%;
   display: block;
-  overflow: hidden;
 }
 .community h2 {
   position: relative;
@@ -894,18 +900,8 @@ figure .pop.on .close {
   padding: 20px;
   position: relative;
   font: bold 20px/1 "arial";
-  opacity: 0;
   transform: translateY(100px);
   transition: 1s;
-}
-.community .inner2 .row section.on section {
-  opacity: 1;
-  transform: translateY(0px);
-}
-.community .inner2 .row section .details {
-  justify-content: space-between;
-  align-items: center;
-  font: bold 14px/1 "arial";
 }
 .community .inner2 .row section .title {
   display: block;
@@ -913,14 +909,26 @@ figure .pop.on .close {
   justify-content: center;
   align-items: center;
 }
-.community .inner2 .row section img {
+.community .inner2 .row section .derails {
+  justify-content: space-between;
+  align-items: center;
+  font: bold 14px/1 "arial";
+}
+.community .inner2 .row section .derails img {
   position: relative;
+  top: -5px;
   width: 100px;
   height: 100px;
-  margin: 5px;
+  padding: 5px 5px 5px 5px;
+  margin: 5px 5px 5px 5px;
 }
-.community .inner2 .row section p {
-  margin: 10px 0 17px 0;
+.community .inner2 .row section .derails p {
+  display: inline;
+  position: relative;
+  top: 10px;
+  left: -70%;
+  margin: 0px 5px 0px 5px;
+  white-space: nowrap;
 }
 .community .inner2 .row section .bottom {
   display: flex;

@@ -211,12 +211,12 @@ for (const el of articles) {
     el.addEventListener("click",(e)=>{
 
         // 클릭한 article(=== e.currentTarget)의 내용(h2, p, video주소)을 변수에 담기
-        // let tit = e.currentTarget.querySelector("h2").innerText;
-        let txt = e.currentTarget.querySelector("p").innerText;
+        let tit = e.currentTarget.querySelector(".txt").querySelector("h2").innerText;
+        let txt = e.currentTarget.querySelector(".txt").querySelector("p").innerText;
         let img = e.currentTarget.querySelector("figure").querySelector("img").getAttribute("src");
         console.log(img);
-        // aside.querySelector("h1").innerText = tit;
-        aside.querySelector("p").innerText = txt;
+        aside.querySelector(".txt").querySelector("h2").innerText = tit;
+        aside.querySelector(".txt").querySelector("p").innerText = txt;
         aside.querySelector("figure").querySelector("img").setAttribute("src",img);
         // setAttribute(얘를, 이것으로) 속성 값을 교체하는 메소드
         
@@ -232,7 +232,7 @@ for (const el of articles) {
 }
 close1.addEventListener("click",()=>{
     aside.classList.remove("on");
-    aside.querySelector("video").pause();
+    // aside.querySelector("video").pause();
     // 옆으로 사라진 상태에서도 재생되는 걸 해결하기 위한 코드
 })
 
