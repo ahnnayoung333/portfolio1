@@ -20,6 +20,25 @@ body {
   overflow-x: hidden;
 }
 
+.scroll {
+  position: fixed;
+  right: 50px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.scroll li {
+  width: 20px;
+  height: 20px;
+  border-radius: 10px;
+  background-color: #777;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+.scroll li.on {
+  height: 80px;
+  background-color: #000;
+}
+
 header {
   width: 100%;
   position: fixed;
@@ -855,8 +874,10 @@ figure .pop.on .close {
 }
 .community h2 {
   position: relative;
-  left: 38%;
-  top: 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
   font: bold 50px/1 "arial";
 }
 .community .inner2 {
@@ -864,7 +885,6 @@ figure .pop.on .close {
   margin: 50px auto;
   padding: 0 20px;
   position: relative;
-  top: 10%;
 }
 .community .inner2 .center_line {
   position: absolute;
@@ -899,12 +919,12 @@ figure .pop.on .close {
   width: calc(50% - 40px);
   padding: 20px;
   position: relative;
+  top: -100px;
   font: bold 20px/1 "arial";
   transform: translateY(100px);
   transition: 1s;
 }
 .community .inner2 .row section .title {
-  display: block;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -984,25 +1004,6 @@ figure .pop.on .close {
 .community .inner2 .row.row_right section > i {
   top: 15px;
   left: -60px;
-}
-
-ul .content {
-  position: fixed;
-  right: 50px;
-  top: 50%;
-  transform: translateY(-50%);
-}
-ul .content li {
-  width: 20px;
-  height: 20px;
-  border-radius: 10px;
-  background-color: #fff;
-  margin-bottom: 20px;
-  cursor: pointer;
-}
-ul .content li.on {
-  height: 80px;
-  background-color: #000;
 }
 
 #footer {
