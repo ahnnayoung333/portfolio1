@@ -243,14 +243,14 @@ close1.addEventListener("click",()=>{
 
 
 //-------------------------역사
-let sections = document.querySelectorAll("main section");
+//스크롤 주기 
+let sections = document.querySelectorAll(".community section");
 let section_arr = Array.from(sections);
-let box3_p = document.querySelector("P");
 
-let lis2 = document.querySelectorAll(".scroll li");
-let lis_arr = Array.from(lis2);
+let lis1 = document.querySelectorAll(".scroll li");
+let lis_arr = Array.from(lis1);
 
-let base = -300;
+let base = -2000;
 let posArr = [];
 
 setPos();
@@ -259,12 +259,15 @@ function setPos(){
         posArr.push(el.offsetTop);
     }
 }
+
 console.log(posArr);
 
 window.addEventListener("scroll", ()=>{
     let scroll = window.scrollY || window.pageXOffset || document.documentElement.scrollTop;
 
     console.log(scroll);
+
+    
 
     section_arr.map((el, index) => {
         if(scroll >= posArr[index] + base ){
