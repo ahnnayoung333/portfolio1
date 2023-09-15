@@ -5,6 +5,11 @@
     top: 30%;
     display: block;
     // overflow: hidden;
+    // opacity: 0;
+
+    // &:hover{
+    //     opacity: 1;
+    // }
   
     h2{
         position: relative;
@@ -61,16 +66,11 @@
                 position: relative;
                 top: -100px;
                 font: bold 20px/1 "arial";
-                opacity: 0;
+                // opacity: 0;
                 transform: translateY(100px);
                 transition: 1s;
 
-                &.on{
-                    section{
-                    opacity: 1;
-                    transform: translateY(0px);
-                    }
-                }
+                
                
                 
                 .title{
