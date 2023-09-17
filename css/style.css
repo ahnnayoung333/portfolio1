@@ -1181,14 +1181,14 @@ figure .pop.on .close {
   font: 16px/1.4 "arial";
 }
 
-main {
+.solo {
   width: 100%;
   height: 100vh;
   position: relative;
   background-color: #fff;
   overflow: hidden;
 }
-main section article {
+.solo section article {
   width: 24vw;
   height: 60vh;
   position: absolute;
@@ -1211,7 +1211,7 @@ main section article {
   개발자의 순서개입이 어렵다
   */
 }
-main section article .txt {
+.solo section article .txt {
   width: 100%;
   height: 40%;
   background-color: #222;
@@ -1221,26 +1221,26 @@ main section article .txt {
   right: 0;
   transition: 0.5s;
 }
-main section article .txt strong {
+.solo section article .txt strong {
   position: relative;
   top: 5%;
   font: bold 14px/1 "arial";
   color: #ddd;
 }
-main section article .txt p {
+.solo section article .txt p {
   position: relative;
   top: 5%;
   font: 14px/1.2 "arial";
   color: #888;
 }
-main section article .txt i {
+.solo section article .txt i {
   font-size: 20px;
   color: #888;
   position: absolute;
   top: 40px;
   right: 40px;
 }
-main section article .txt h2 {
+.solo section article .txt h2 {
   font: 5vw/1 "crimson text";
   color: #fff;
   position: absolute;
@@ -1250,7 +1250,7 @@ main section article .txt h2 {
   transition: 0.5s;
   text-shadow: 5px 5px 3px rgba(0, 0, 0, 0.2);
 }
-main section article .txt h2::before {
+.solo section article .txt h2::before {
   content: "";
   position: absolute;
   width: 0%;
@@ -1260,7 +1260,7 @@ main section article .txt h2::before {
   left: 0;
   transition: width 1s 0.5s;
 }
-main section article .txt .desc {
+.solo section article .txt .desc {
   width: 60%;
   opacity: 0;
   position: absolute;
@@ -1270,7 +1270,7 @@ main section article .txt .desc {
   font: 16px/1.3 "arial";
   color: #888;
 }
-main section article .pic {
+.solo section article .pic {
   width: 100%;
   height: 60%;
   background-color: #000;
@@ -1279,14 +1279,14 @@ main section article .pic {
   left: 0;
   transition: 0.5s;
 }
-main section article .pic img {
+.solo section article .pic img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   opacity: 0.5;
   transition: opacity 0.5s;
 }
-main section article .open {
+.solo section article .open {
   width: 0%;
   height: 60px;
   background-color: #fff;
@@ -1300,20 +1300,20 @@ main section article .open {
   cursor: pointer;
   transition: 0.5s;
 }
-main section article .open span {
+.solo section article .open span {
   font: 16px/1 "crimson text";
   color: #000;
   transform: translateX(-200px);
   opacity: 0;
   transition: 0.5s;
 }
-main section article .open i {
+.solo section article .open i {
   margin-right: -100px;
   opacity: 0;
   color: #555;
   transition: 0.5s;
 }
-main section article .close {
+.solo section article .close {
   cursor: pointer;
   position: absolute;
   top: 20vh;
@@ -1322,46 +1322,46 @@ main section article .close {
   opacity: 0;
   transition: all 0.5s;
 }
-main section article:nth-of-type(1) {
+.solo section article:nth-of-type(1) {
   transform: translateX(-400%) translateY(200%);
   opacity: 0;
 }
-main section article:nth-of-type(2) {
+.solo section article:nth-of-type(2) {
   transform: translateX(-130%) translateY(40%);
   opacity: 0.8;
 }
-main section article:nth-of-type(3) {
+.solo section article:nth-of-type(3) {
   transform: translateX(0%) translateY(0%);
   opacity: 1;
 }
-main section article:nth-of-type(3) .txt h2::before {
+.solo section article:nth-of-type(3) .txt h2::before {
   width: 4vw;
 }
-main section article:nth-of-type(3) .pic img {
+.solo section article:nth-of-type(3) .pic img {
   opacity: 1;
 }
-main section article:nth-of-type(3) .open {
+.solo section article:nth-of-type(3) .open {
   width: 100%;
 }
-main section article:nth-of-type(3) .open span {
+.solo section article:nth-of-type(3) .open span {
   transform: translateX(20px);
   opacity: 1;
   transition: 0.5s 0.5s;
 }
-main section article:nth-of-type(3) .open i {
+.solo section article:nth-of-type(3) .open i {
   margin-right: 30px;
   opacity: 1;
   transition: 0.5s 0.8s;
 }
-main section article:nth-of-type(4) {
+.solo section article:nth-of-type(4) {
   transform: translateX(130%) translateY(-40%);
   opacity: 0.8;
 }
-main section article:nth-of-type(5) {
+.solo section article:nth-of-type(5) {
   transform: translateX(400%) translateY(-200%);
   opacity: 0;
 }
-main section article.on {
+.solo section article.on {
   width: 100%;
   height: 100%;
   margin-top: 0;
@@ -1372,38 +1372,38 @@ main section article.on {
   transition-duration: 0.8s;
   transition-delay: 0.5s;
 }
-main section article.on .txt {
+.solo section article.on .txt {
   width: 60%;
   height: 100%;
   padding: 5vw;
   transition: 0.5s 0.5s;
 }
-main section article.on .txt h2 {
+.solo section article.on .txt h2 {
   bottom: calc(100% - 5vw - 200px);
   left: 5vw;
   transition: 0.5s;
 }
-main section article.on .txt .desc {
+.solo section article.on .txt .desc {
   opacity: 1;
   top: 50%;
   transition: 1s 1s;
 }
-main section article.on .pic {
+.solo section article.on .pic {
   width: 40%;
   height: 100%;
   transition: 0.5s 0.5s;
 }
-main section article.on .open {
+.solo section article.on .open {
   opacity: 0;
   margin-top: 1000px;
 }
-main section article.on .close {
+.solo section article.on .close {
   opacity: 1;
   right: 10vw;
   transition: 0.5s 1s;
   transition-timing-function: cubic-bezier(0.48, -0.67, 0.54, 1.68);
 }
-main nav {
+.solo nav {
   position: absolute;
   bottom: 10vh;
   right: 10vw;
@@ -1411,10 +1411,10 @@ main nav {
   gap: 50px;
   transition: 0.5s;
 }
-main nav:hover {
+.solo nav:hover {
   gap: 80px;
 }
-main nav::before {
+.solo nav::before {
   content: "";
   height: 150%;
   width: 1px;
@@ -1424,18 +1424,18 @@ main nav::before {
   left: 50%;
   transform: translateY(-50%) rotate(-60deg);
 }
-main nav p {
+.solo nav p {
   width: 100px;
   height: 40px;
   position: relative;
   color: #000;
   cursor: pointer;
 }
-main nav p span {
+.solo nav p span {
   font: italic 12px/1 "arial";
   display: inline-block;
 }
-main nav p::before {
+.solo nav p::before {
   content: "";
   position: absolute;
   width: 0%;
@@ -1445,7 +1445,7 @@ main nav p::before {
   transition: 0.2s 0.2s;
   opacity: 1;
 }
-main nav p::after {
+.solo nav p::after {
   content: "";
   position: absolute;
   width: 0px;
@@ -1455,39 +1455,39 @@ main nav p::after {
   opacity: 1;
   transition: 0.2s 0s;
 }
-main nav p.prev {
+.solo nav p.prev {
   text-align: right;
 }
-main nav p.prev span {
+.solo nav p.prev span {
   transform: translateY(20px);
 }
-main nav p.prev::before {
+.solo nav p.prev::before {
   right: 0px;
 }
-main nav p.prev::after {
+.solo nav p.prev::after {
   transform: rotate(30deg);
   left: 0;
   transform-origin: left center;
 }
-main nav p.next {
+.solo nav p.next {
   text-align: left;
 }
-main nav p.next span {
+.solo nav p.next span {
   transform: translateY(-5px);
 }
-main nav p.next::before {
+.solo nav p.next::before {
   left: 0;
 }
-main nav p.next::after {
+.solo nav p.next::after {
   transform: rotate(30deg);
   right: 0;
   transform-origin: right center;
 }
-main nav p:hover.next::before, main nav p:hover.prev::before {
+.solo nav p:hover.next::before, .solo nav p:hover.prev::before {
   width: 100%;
   transition: 0.2s;
 }
-main nav p:hover.next::after, main nav p:hover.prev::after {
+.solo nav p:hover.next::after, .solo nav p:hover.prev::after {
   width: 40px;
   transition: 0.2s 0.2s;
 }
