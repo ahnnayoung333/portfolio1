@@ -49,11 +49,14 @@ figure {
 
                 h2 {
                     font: normal 24px/1 "anton";
-                    color: #ccc;
+                    color: #eee;
+                    text-shadow: 3px 3px 3px #000;
                     position: absolute;
                     top: 60%;
                     left: 50%;
                     transform: translateX(-50%);
+                    
+                   
                     // letter-spacing: 2px; //줄간격은 필요 없을듯
                     transition: 1.5s;
                 }
@@ -178,8 +181,8 @@ figure {
                     h2 {
                         font-size: 110px;
                         opacity: 0.9;
-                        color: #fff;
-                        text-shadow: 3px 3px 3px #00000060;
+                        color: #eee;
+                        text-shadow: 3px 3px 3px #000;
                         top: -30vh;
                         letter-spacing: 0px;
                     }
@@ -288,23 +291,31 @@ figure {
         h2 {
             font: 12vw/1 "anton";
             color: #fff;
+            text-shadow: 3px 3px 3px #000;
             margin-bottom: 40px;
             opacity: 0;
             transform: translateX(-100px);
             transition: 1s 0.3s;
+            
+            
+         
+        }
+        .txt1{
+            p {
+                font: 22px/1.2 "arial";
+                color: #fff;
+                letter-spacing: 1px;
+                margin-bottom: 50px;
+                opacity: 0;
+                transform: translateX(-100px);
+                transition: 0.5s 0.8s;
+                text-shadow: 5px 5px 5px #000;
+    
+                //nth 타입 그걸로 ..??? 다 따로 하려면 어캐허너
+            }
         }
 
-        p {
-            font: 22px/1.2 "arial";
-            color: #fff;
-            letter-spacing: 1px;
-            margin-bottom: 50px;
-            opacity: 0;
-            transform: translateX(-100px);
-            transition: 0.5s 0.8s;
-
-            //nth 타입 그걸로 ..??? 다 따로 하려면 어캐허너
-        }
+        
 
         .close {
             width: 200px;
@@ -318,6 +329,8 @@ figure {
             justify-content: center;
             align-items: center;
             opacity: 0;
+            box-shadow: 3px 3px 5px #333;
+
 
             &:hover {
                 background-color: #fff;
@@ -334,6 +347,7 @@ figure {
             .close {
                 opacity: 1;
                 transform: translateX(0px);
+                text-shadow: 2px 2px 3px #000;
             }
         }
     }

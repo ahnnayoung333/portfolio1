@@ -493,7 +493,8 @@ figure .banner ul li {
 }
 figure .banner ul li h2 {
   font: normal 24px/1 "anton";
-  color: #ccc;
+  color: #eee;
+  text-shadow: 3px 3px 3px #000;
   position: absolute;
   top: 60%;
   left: 50%;
@@ -594,8 +595,8 @@ figure .banner ul li:nth-of-type(4) {
 figure .banner ul li:nth-of-type(4) h2 {
   font-size: 110px;
   opacity: 0.9;
-  color: #fff;
-  text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3764705882);
+  color: #eee;
+  text-shadow: 3px 3px 3px #000;
   top: -30vh;
   letter-spacing: 0px;
 }
@@ -677,12 +678,13 @@ figure .pop {
 figure .pop h2 {
   font: 12vw/1 "anton";
   color: #fff;
+  text-shadow: 3px 3px 3px #000;
   margin-bottom: 40px;
   opacity: 0;
   transform: translateX(-100px);
   transition: 1s 0.3s;
 }
-figure .pop p {
+figure .pop .txt1 p {
   font: 22px/1.2 "arial";
   color: #fff;
   letter-spacing: 1px;
@@ -690,6 +692,7 @@ figure .pop p {
   opacity: 0;
   transform: translateX(-100px);
   transition: 0.5s 0.8s;
+  text-shadow: 5px 5px 5px #000;
 }
 figure .pop .close {
   width: 200px;
@@ -703,6 +706,7 @@ figure .pop .close {
   justify-content: center;
   align-items: center;
   opacity: 0;
+  box-shadow: 3px 3px 5px #333;
 }
 figure .pop .close:hover {
   background-color: #fff;
@@ -716,6 +720,7 @@ figure .pop.on p,
 figure .pop.on .close {
   opacity: 1;
   transform: translateX(0px);
+  text-shadow: 2px 2px 3px #000;
 }
 
 .member {
@@ -769,6 +774,7 @@ figure .pop.on .close {
   position: relative;
   transition: 1s;
   font-size: 20px;
+  cursor: pointer;
 }
 .member section article .inner .txt p {
   opacity: 0;
@@ -787,6 +793,7 @@ figure .pop.on .close {
   width: 100%;
   height: 100%;
   object-fit: contain;
+  cursor: pointer;
 }
 
 .aside {
@@ -1038,27 +1045,54 @@ figure .pop.on .close {
 }
 
 .location {
+  position: relative;
   width: 100%;
+  margin: 20px;
 }
-.location #map {
+.location .inner {
+  position: relative;
+  top: 200px;
   width: 100%;
+  height: 100vh;
+}
+.location .inner h1 {
+  position: relative;
+  left: 22%;
+  font: normal 50px/1 "arial";
+  color: #000;
+  margin-bottom: 60px;
+}
+.location .inner h1 span {
+  font: normal 20px/1 "맑은 고딕";
+  color: #aaa;
+}
+.location .inner h1 span::before {
+  content: "/";
+  margin-right: 20px;
+  margin-left: 10px;
+}
+.location .inner #map {
+  position: relative;
+  left: 50%;
+  transform: translate(-50%);
+  width: 1080px;
   height: 500px;
   border: 1px solid black;
   margin-bottom: 20px;
 }
-.location::after {
+.location .inner::after {
   content: "";
   display: block;
   clear: both;
 }
-.location .traffic {
+.location .inner .traffic {
   float: left;
 }
-.location .traffic li {
+.location .inner .traffic li {
   float: left;
   margin-right: 20px;
 }
-.location .traffic li a {
+.location .inner .traffic li a {
   display: block;
   width: 200px;
   height: 40px;
@@ -1067,47 +1101,14 @@ figure .pop.on .close {
   color: #fff;
   text-align: center;
   border: 1px solid #555;
+  position: relative;
+  top: 30px;
+  left: 205%;
 }
-.location .traffic li.on a {
+.location .inner .traffic li.on a {
   background-color: #fff;
   color: #555;
   opacity: 0.4;
-}
-.location .branch {
-  float: right;
-}
-.location .branch li {
-  float: left;
-  margin-left: 10px;
-}
-.location .branch li a {
-  display: block;
-  width: 200px;
-  height: 40px;
-  background-color: #555;
-  font: bold 12px/40px "맑은고딕";
-  color: #fff;
-  text-align: center;
-  border: 1px solid #555;
-}
-.location .branch li.on a {
-  background-color: #fff;
-  color: #555;
-  opacity: 0.4;
-}
-
-* {
-  margin: 0px;
-  padding: 0px;
-  box-sizing: border-box;
-}
-
-ul, ol, li {
-  list-style: none;
-}
-
-a {
-  text-decoration: none;
 }
 
 .award {
@@ -1180,122 +1181,553 @@ a {
   font: 16px/1.4 "arial";
 }
 
-#wrap1 {
-  width: 800px;
-  height: 300px;
-  border: 1px solid #000;
-  margin: 200px auto;
-  display: flex;
-  justify-content: space-between;
-}
-#wrap1 .left1 {
-  width: 200px;
-  height: 100%;
-  background-color: #444;
-}
-#wrap1 .left1 ul li a {
-  display: block;
+main {
   width: 100%;
-  height: 50px;
-  font: bold 14px/50px "arial";
-  color: #888;
-  text-align: center;
-}
-#wrap1 .left1 ul li.on a {
-  background-color: #000;
-  color: aqua;
-}
-#wrap1 .right1 {
-  width: 600px;
-  height: 100%;
+  height: 100vh;
   position: relative;
-  background-color: #eee;
+  background-color: #fff;
+  overflow: hidden;
 }
-#wrap1 .right1 div {
-  width: 100%;
-  height: 100%;
+main section article {
+  width: 24vw;
+  height: 60vh;
   position: absolute;
-  top: 0px;
-  left: 0px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 50px;
-  opacity: 0;
+  top: 50%;
+  left: 50%;
+  margin-top: -30vh;
+  margin-left: -12vw;
   z-index: 1;
-  transition: 1.5s;
+  overflow: hidden;
+  transition-property: width, height, transform, opacity, margin-left, margin-top, top, left;
+  transition-duration: 0.5s;
+  transition-delay: 0s;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
+  /*
+  article의 순서를 적용하는 방법의 고민
+  1. nth-of-type
+  2. data-index
+  data속성으로 작업하면 개발자의 의도와 개입이 자유롭다
+  반면nth-of-type은 이미정해진 index로 순환하기 때문에
+  개발자의 순서개입이 어렵다
+  */
 }
-#wrap1 .right1 div.on {
-  opacity: 1;
-  z-index: 2;
-}
-#wrap1 .right1 div.on .flower.on {
-  opacity: 1;
-  top: -100px;
-  right: -100px;
-  background-color: pink;
-  transform: rotate(0deg);
-}
-#wrap1 .right1 div .flower {
-  width: 200px;
-  height: 200px;
-  background-color: aqua;
+main section article .txt {
+  width: 100%;
+  height: 40%;
+  background-color: #222;
+  padding: 30px 20px 20px;
   position: absolute;
   top: 0;
   right: 0;
-  transform: rotate(270deg);
-  opacity: 0;
   transition: 0.5s;
 }
-
-#tab1 {
-  width: 600px;
-  height: 340px;
-  border: 1px solid #000;
-  margin: 100px auto;
+main section article .txt strong {
   position: relative;
+  top: 5%;
+  font: bold 14px/1 "arial";
+  color: #ddd;
 }
-#tab1 ul {
+main section article .txt p {
+  position: relative;
+  top: 5%;
+  font: 14px/1.2 "arial";
+  color: #888;
+}
+main section article .txt i {
+  font-size: 20px;
+  color: #888;
+  position: absolute;
+  top: 40px;
+  right: 40px;
+}
+main section article .txt h2 {
+  font: 5vw/1 "crimson text";
+  color: #fff;
+  position: absolute;
+  bottom: 1vw;
+  left: 20px;
+  z-index: 2;
+  transition: 0.5s;
+  text-shadow: 5px 5px 3px rgba(0, 0, 0, 0.2);
+}
+main section article .txt h2::before {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 1px;
+  background-color: #fff;
+  top: -10px;
+  left: 0;
+  transition: width 1s 0.5s;
+}
+main section article .txt .desc {
+  width: 60%;
+  opacity: 0;
+  position: absolute;
+  top: 60%;
+  left: 5vw;
+  transition: 0.5s;
+  font: 16px/1.3 "arial";
+  color: #888;
+}
+main section article .pic {
   width: 100%;
-  display: flex;
+  height: 60%;
+  background-color: #000;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transition: 0.5s;
 }
-#tab1 ul li {
-  flex: 1;
-  height: 40px;
-}
-#tab1 ul li a {
-  display: block;
+main section article .pic img {
   width: 100%;
   height: 100%;
-  font: bold 14px/1 "arial";
-  color: #999;
-  background-color: #333;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  object-fit: cover;
+  opacity: 0.5;
+  transition: opacity 0.5s;
 }
-#tab1 ul li.on a {
+main section article .open {
+  width: 0%;
+  height: 60px;
   background-color: #fff;
-  color: #333;
-}
-#tab1 article div {
-  width: 100%;
-  height: 300px;
   position: absolute;
-  left: 0;
-  bottom: 0;
-  font: bold 40px/1 "arial";
-  color: #333;
+  bottom: 0px;
+  left: 0px;
+  overflow: hidden;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  opacity: 0;
-  z-index: 1;
+  cursor: pointer;
   transition: 0.5s;
 }
-#tab1 article div.on {
-  z-index: 2;
+main section article .open span {
+  font: 16px/1 "crimson text";
+  color: #000;
+  transform: translateX(-200px);
+  opacity: 0;
+  transition: 0.5s;
+}
+main section article .open i {
+  margin-right: -100px;
+  opacity: 0;
+  color: #555;
+  transition: 0.5s;
+}
+main section article .close {
+  cursor: pointer;
+  position: absolute;
+  top: 20vh;
+  right: -10vh;
+  color: #ddd;
+  opacity: 0;
+  transition: all 0.5s;
+}
+main section article:nth-of-type(1) {
+  transform: translateX(-400%) translateY(200%);
+  opacity: 0;
+}
+main section article:nth-of-type(2) {
+  transform: translateX(-130%) translateY(40%);
+  opacity: 0.8;
+}
+main section article:nth-of-type(3) {
+  transform: translateX(0%) translateY(0%);
   opacity: 1;
+}
+main section article:nth-of-type(3) .txt h2::before {
+  width: 4vw;
+}
+main section article:nth-of-type(3) .pic img {
+  opacity: 1;
+}
+main section article:nth-of-type(3) .open {
+  width: 100%;
+}
+main section article:nth-of-type(3) .open span {
+  transform: translateX(20px);
+  opacity: 1;
+  transition: 0.5s 0.5s;
+}
+main section article:nth-of-type(3) .open i {
+  margin-right: 30px;
+  opacity: 1;
+  transition: 0.5s 0.8s;
+}
+main section article:nth-of-type(4) {
+  transform: translateX(130%) translateY(-40%);
+  opacity: 0.8;
+}
+main section article:nth-of-type(5) {
+  transform: translateX(400%) translateY(-200%);
+  opacity: 0;
+}
+main section article.on {
+  width: 100%;
+  height: 100%;
+  margin-top: 0;
+  margin-left: 0;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  transition-duration: 0.8s;
+  transition-delay: 0.5s;
+}
+main section article.on .txt {
+  width: 60%;
+  height: 100%;
+  padding: 5vw;
+  transition: 0.5s 0.5s;
+}
+main section article.on .txt h2 {
+  bottom: calc(100% - 5vw - 200px);
+  left: 5vw;
+  transition: 0.5s;
+}
+main section article.on .txt .desc {
+  opacity: 1;
+  top: 50%;
+  transition: 1s 1s;
+}
+main section article.on .pic {
+  width: 40%;
+  height: 100%;
+  transition: 0.5s 0.5s;
+}
+main section article.on .open {
+  opacity: 0;
+  margin-top: 1000px;
+}
+main section article.on .close {
+  opacity: 1;
+  right: 10vw;
+  transition: 0.5s 1s;
+  transition-timing-function: cubic-bezier(0.48, -0.67, 0.54, 1.68);
+}
+main nav {
+  position: absolute;
+  bottom: 10vh;
+  right: 10vw;
+  display: flex;
+  gap: 50px;
+  transition: 0.5s;
+}
+main nav:hover {
+  gap: 80px;
+}
+main nav::before {
+  content: "";
+  height: 150%;
+  width: 1px;
+  background-color: #000;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%) rotate(-60deg);
+}
+main nav p {
+  width: 100px;
+  height: 40px;
+  position: relative;
+  color: #000;
+  cursor: pointer;
+}
+main nav p span {
+  font: italic 12px/1 "arial";
+  display: inline-block;
+}
+main nav p::before {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 1px;
+  background-color: #000;
+  top: 50%;
+  transition: 0.2s 0.2s;
+  opacity: 1;
+}
+main nav p::after {
+  content: "";
+  position: absolute;
+  width: 0px;
+  height: 1px;
+  background-color: #000;
+  top: 50%;
+  opacity: 1;
+  transition: 0.2s 0s;
+}
+main nav p.prev {
+  text-align: right;
+}
+main nav p.prev span {
+  transform: translateY(20px);
+}
+main nav p.prev::before {
+  right: 0px;
+}
+main nav p.prev::after {
+  transform: rotate(30deg);
+  left: 0;
+  transform-origin: left center;
+}
+main nav p.next {
+  text-align: left;
+}
+main nav p.next span {
+  transform: translateY(-5px);
+}
+main nav p.next::before {
+  left: 0;
+}
+main nav p.next::after {
+  transform: rotate(30deg);
+  right: 0;
+  transform-origin: right center;
+}
+main nav p:hover.next::before, main nav p:hover.prev::before {
+  width: 100%;
+  transition: 0.2s;
+}
+main nav p:hover.next::after, main nav p:hover.prev::after {
+  width: 40px;
+  transition: 0.2s 0.2s;
+}
+
+#slider {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+#slider h2 {
+  position: relative;
+  top: 20%;
+  left: 20%;
+  font: bold 50px "arial";
+}
+#slider .panel {
+  width: 500%;
+  height: 100%;
+  transition: 0.5s;
+}
+#slider .panel li {
+  width: 20%;
+  height: 100%;
+  float: left;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+#slider .panel li:nth-of-type(1) {
+  background-image: url("/img/11111.png");
+}
+#slider .panel li:nth-of-type(2) {
+  background-image: url("/img/2222.png");
+}
+#slider .panel li:nth-of-type(3) {
+  background-image: url("/img/3333.png");
+}
+#slider .panel li:nth-of-type(4) {
+  background-image: url("/img/44444.png");
+}
+#slider .panel li:nth-of-type(5) {
+  background-image: url("/img/555.png");
+}
+#slider .panel li .txt {
+  position: relative;
+  left: 20%;
+  top: 20%;
+}
+#slider .btns {
+  position: absolute;
+  bottom: 5vh;
+  left: 5%;
+  width: 90%;
+}
+#slider .btns li {
+  float: left;
+  width: 20%;
+  padding: 20px;
+}
+#slider .btns li a {
+  display: block;
+  width: 100%;
+  height: 40px;
+  font: 14px/40px "arial";
+  text-align: center;
+  color: #222;
+  border: 1px solid #222;
+  border-radius: 20px;
+  transition: 0.5s;
+}
+#slider .btns li.on a {
+  background-color: #222;
+  color: #fff;
+}
+
+main .community2 {
+  width: 100%;
+  height: 215vh;
+  position: relative;
+  top: 200px;
+  display: block;
+}
+main .community2 h2 {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  font: bold 50px/1 "arial";
+}
+main .community2 .inner2 {
+  width: 1180px;
+  margin: 50px auto;
+  padding: 0 20px;
+  position: relative;
+}
+main .community2 .inner2 .center_line {
+  position: absolute;
+  top: 0%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 110%;
+  background-color: #000;
+}
+main .community2 .inner2 .center_line .scroll_icon {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #f2f2f2;
+  font-size: 25px;
+  text-align: center;
+  line-height: 40px;
+  color: #79e5cb;
+  box-shadow: 0 0 0 4px #fff, inset 0 2px 0 rgba(0, 0, 0, 0.08), 0 3px 0 4px rgba(0, 0, 0, 0.05);
+}
+main .community2 .inner2 .row {
+  display: flex;
+}
+main .community2 .inner2 .row section {
+  background-color: #eee;
+  border-radius: 5px;
+  width: calc(50% - 40px);
+  padding: 20px;
+  position: relative;
+  top: 100px;
+  font: bold 20px/1 "arial";
+  opacity: 0;
+  transform: rotateY(180deg) translateY(100px);
+  transition: 0.5s;
+}
+main .community2 .inner2 .row section.on {
+  opacity: 1;
+  transform: rotateY(0deg) translateY(0px);
+}
+main .community2 .inner2 .row section .title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main .community2 .inner2 .row section .derails {
+  justify-content: space-between;
+  align-items: center;
+  font: bold 14px/1 "arial";
+}
+main .community2 .inner2 .row section .derails img {
+  position: relative;
+  top: -5px;
+  width: 100px;
+  height: 100px;
+  padding: 5px 5px 5px 5px;
+  margin: 5px 5px 5px 5px;
+}
+main .community2 .inner2 .row section .derails p {
+  display: inline;
+  position: relative;
+  top: 10px;
+  left: -70%;
+  margin: 0px 5px 0px 5px;
+  white-space: nowrap;
+}
+main .community2 .inner2 .row section .bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+main .community2 .inner2 .row section .bottom a {
+  display: block;
+  background-color: #79e5cb;
+  padding: 7px 15px;
+  border-radius: 5px;
+  color: #fff;
+}
+main .community2 .inner2 .row section::before {
+  content: "";
+  display: block;
+  width: 15px;
+  height: 15px;
+  background-color: #79e5cb;
+  position: absolute;
+  top: 28px;
+  transform: rotate(45deg);
+  z-index: -1;
+}
+main .community2 .inner2 .row section > i {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #f2f2f2;
+  text-align: center;
+  line-height: 40px;
+  color: #79e5cb;
+  font-size: 17px;
+  box-shadow: 0 0 0 4px #fff, inset 0 2px 0 rgba(0, 0, 0, 0.08), 0 3px 0 4px rgba(0, 0, 0, 0.05);
+}
+main .community2 .inner2 .row.row_left {
+  justify-content: flex-start;
+}
+main .community2 .inner2 .row.row_left section::before {
+  right: -7px;
+}
+main .community2 .inner2 .row.row_left section > i {
+  top: 15px;
+  right: -60px;
+}
+main .community2 .inner2 .row.row_right {
+  justify-content: flex-end;
+}
+main .community2 .inner2 .row.row_right section::before {
+  left: -7px;
+}
+main .community2 .inner2 .row.row_right section > i {
+  top: 15px;
+  left: -60px;
+}
+
+.scroll {
+  display: none;
+  position: fixed;
+  right: 50px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.scroll li {
+  width: 20px;
+  height: 20px;
+  border-radius: 10px;
+  background-color: #fff;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+.scroll li.on {
+  height: 80px;
+  background-color: #000;
 }
 
 /*# sourceMappingURL=style.css.map */

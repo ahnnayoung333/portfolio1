@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>샤이니월드</title>
     <link rel="stylesheet" href="css/style.css">
-    <script defer src="./script/anime.js"></script>
-    <script defer src="script/award.js"></script>
+    <script defer src="script/location.js"></script>
     <script src="https://kit.fontawesome.com/c12878d3ba.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=bb8e4da75b8138f8b832057741b0767a"></script>
 
 </head>
 <body>
@@ -48,6 +48,24 @@
         </nav>
     </div>
 </header>
+
+
+<section class="content location">
+    <div class="sub_visual"></div>
+    <div class="inner">
+      <h1>LOCATION <span>찾아오시는길</span></h1>
+      <div id="map"></div>
+      <ul class="traffic">
+        <li><a href="#">교통정보 보기</a></li>
+        <li class="on"><a href="#">교통정보 끄기</a></li>
+        <!-- 교통정보 처음부터 안 보이게 할거니까 끄는곳에 on -->
+      </ul>
+      
+
+
+    </div>
+
+  </section>
 
 <footer id="footer">
     <div class="inner">

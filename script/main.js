@@ -142,6 +142,7 @@ const [prev, next] = btns1.children;
 const pop = document.querySelector(".pop");
 const close = pop.querySelector(".close");
 const opens = banner_ul.querySelectorAll("a");
+const aside1 = document.querySelector(".pop");
 
 //초기화 작업 = 0인덱스 슬라이드가 4번째인 즉 가운데 활성화 슬라이드가 되게하기
 //반복을 돌면서 prepend로 마지막 슬라이드를 맨앞으로 3번 해주면되겠습니다
@@ -167,8 +168,12 @@ opens.forEach((el) => {
         e.preventDefault();
         //이곳에 코드를 작성해보세요
         let txt = e.currentTarget.closest("li").querySelector("h2").innerText;
+        // let txt1 = e.currentTarget.querySelector(".txt1").querySelector("p").innerText;
+        let txt1 = e.currentTarget.closest("li").querySelector("p").innerText;
+        // let txt1 = e.querySelector("p").innerText;
         console.log(txt);
         pop.querySelector("h2").innerText = txt;
+        pop.querySelector("p").innerText = txt1;
 
 
         pop.classList.add("on");
@@ -176,6 +181,10 @@ opens.forEach((el) => {
         e.currentTarget.classList.add("off");
         //버튼이 활성화되면 안되므로 사라지게
         btns1.classList.add("off");
+
+        
+
+        
 
 
     })
